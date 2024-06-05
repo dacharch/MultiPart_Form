@@ -21,6 +21,8 @@ const FormContainer = () => {
 
        }
   }
+
+  
   const getSteps = () =>{
      return [
         "Personal Information",
@@ -29,6 +31,7 @@ const FormContainer = () => {
         "Review and Submit"
      ] ;
   }
+
 
   const steps = getSteps() ;
 
