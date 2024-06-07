@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 import PersonalInfo from '../Pages/PersonalInfo';
-import TechnicalSkill from './TechnicalSkill';
+import TechnicalSkill from '../Pages/TechnicalSkill';
 
 const FormContainer = () => {
   const [activeStep,setActiveStep] = useState(0) ;
@@ -22,6 +22,7 @@ const FormContainer = () => {
               return <PersonalInfo/>
           case 1:
              return <TechnicalSkill/>
+        
 
        }
   }
