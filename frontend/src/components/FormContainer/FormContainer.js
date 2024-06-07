@@ -12,6 +12,7 @@ import {
 
 import PersonalInfo from '../Pages/PersonalInfo';
 import TechnicalSkill from '../Pages/TechnicalSkill';
+import UploadSection from '../Pages/UploadSection';
 
 const FormContainer = () => {
   const [activeStep,setActiveStep] = useState(0) ;
@@ -22,6 +23,8 @@ const FormContainer = () => {
               return <PersonalInfo/>
           case 1:
              return <TechnicalSkill/>
+          case 2: 
+             return <UploadSection/>
         
 
        }
