@@ -9,7 +9,9 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
+
 import PersonalInfo from '../Pages/PersonalInfo';
+import TechnicalSkill from './TechnicalSkill';
 
 const FormContainer = () => {
   const [activeStep,setActiveStep] = useState(0) ;
@@ -18,6 +20,8 @@ const FormContainer = () => {
        switch(step) {
           case 0: 
               return <PersonalInfo/>
+          case 1:
+             return <TechnicalSkill/>
 
        }
   }
@@ -32,6 +36,9 @@ const FormContainer = () => {
      ] ;
   }
 
+ const handleNext = ()=>{
+     setActiveStep(activeStep+1) ;
+ }
 
   const steps = getSteps() ;
 
@@ -63,7 +70,10 @@ const FormContainer = () => {
             >
                 Edit
             </Button>
-            <Button variant='contained'>
+            <Button
+              variant='contained'
+              onClick={handleNext}
+            >
                Next
             </Button>
             

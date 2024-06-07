@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useContext,createContext } from 'react'
 
 
-const FormContext = createContext( ) ;
+const FormContext = createContext() ;
 
 const StateProvider = ({children}) => {
     const [fullName,setFullName] =useState("");
@@ -26,4 +26,4 @@ const StateProvider = ({children}) => {
 export function FormState(){
      return useContext(FormContext);
 }
-export default StateProvider
+export default StateProvider;
