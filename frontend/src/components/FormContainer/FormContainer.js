@@ -13,6 +13,7 @@ import {
 import PersonalInfo from '../Pages/PersonalInfo';
 import TechnicalSkill from '../Pages/TechnicalSkill';
 import UploadSection from '../Pages/UploadSection';
+import ReviewAndSubmit from '../Pages/ReviewAndSubmit';
 
 const FormContainer = () => {
   const [activeStep,setActiveStep] = useState(0) ;
@@ -25,7 +26,8 @@ const FormContainer = () => {
              return <TechnicalSkill/>
           case 2: 
              return <UploadSection/>
-        
+          case 3: 
+             return <ReviewAndSubmit/>
 
        }
   }
