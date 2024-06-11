@@ -17,15 +17,9 @@ import { FormState } from '../../context/StateProvider';
 const ReviewAndSubmit = () => {
 
    const {
-     fullName,
-     dateOfBirth,
-     email,
-     phoneNumber,
-     programmingLanguages,
-     experience,
-     developmentCheck,
-     interestedArea,
-     selectedFile,
+    fullName,
+    SetFullName
+    
    } = FormState();
    
    
@@ -205,7 +199,7 @@ const ReviewAndSubmit = () => {
           </Grid>
         </Grid>
         <h2>Uploaded File</h2>
-        <Typography>File Name : {selectedFile.name}</Typography>
+        <Typography>File Name : {}</Typography>
       </Container>
     </div>
   );
