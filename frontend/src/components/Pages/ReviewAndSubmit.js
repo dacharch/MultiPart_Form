@@ -15,12 +15,7 @@ import {
 import { FormState } from '../../context/StateProvider';
 
 const ReviewAndSubmit = () => {
-
-   const {
-    fullName,
-    SetFullName
-    
-   } = FormState();
+  
    
    
   return (
