@@ -4,8 +4,22 @@ import React from 'react'
 
 const PersonalInfo = () => {
 
-   const { fullName,setFullName,dateofBirth,setDateofbirth} = FormState() ;
+   const { fullName, setFullName, dateOfBirth, setDateOfBirth } = FormState(); ;
 
+
+   function settingDateOfBirth(e){
+       const enterDob = e.target.value ;
+       setDateOfBirth(enterDob) ;
+       validateDob(enterDob) ;
+
+   }     
+   
+   function validateDob(dob){
+      const currentDate = new Date() ;
+      const enteredDate = new Date(dob) ;
+      const minDate = new Date ;
+      minDate.setFullYear(minDate.getFullYear()-18) ;
+   }
   
   return (
      <Container>
@@ -26,7 +40,9 @@ const PersonalInfo = () => {
                    label="Date of Birth"
                    type="date"
                    name="dob"
-                   value={dateofBirth}
+                   value={dateOfBirth}
+                   onChange={settingDateOfBirth}
+                   required
                 />
              </Grid>
              <Grid item xs={12}>
@@ -35,6 +51,7 @@ const PersonalInfo = () => {
                     label="Email Address"
                     type="email"
                     name="email"
+                    value={email}
                     required
                  />
              </Grid>
