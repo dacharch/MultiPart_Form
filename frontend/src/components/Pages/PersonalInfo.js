@@ -3,6 +3,9 @@ import { FormState } from '../../context/StateProvider';
 import React from 'react'
 
 const PersonalInfo = () => {
+
+   const { fullName,setFullName,dateofBirth,setDateofbirth} = FormState() ;
+
   
   return (
      <Container>
@@ -12,10 +15,10 @@ const PersonalInfo = () => {
                    fullWidth
                    label="Full Name"
                    name="Full Name"
-
-               />
-
-                
+                   value={fullName}
+                   onChange={(e)=>setFullName(e.target.value)}
+                   required
+               />                
              </Grid>
              <Grid item xs={12}>
                 <TextField
@@ -23,6 +26,7 @@ const PersonalInfo = () => {
                    label="Date of Birth"
                    type="date"
                    name="dob"
+                   value={dateofBirth}
                 />
              </Grid>
              <Grid item xs={12}>

@@ -16,7 +16,23 @@ const StateProvider = ({children}) => {
 
   
     return (
-    <FormContext.Provider value={{fullName,setFullName,dateOfBirth,setDateOfBirth}}>
+    <FormContext.Provider value={{
+           fullName,
+           setFullName,
+           dateOfBirth,
+           setDateOfBirth,
+           email,
+           setEmail,
+           programmingLanguage,
+           setProgrammingLanguage,
+           experience,
+           setExperience,
+           interestedArea,
+           setInterestedArea
+           ,selectedFile,
+           setSelectedFile
+
+    }}>
          {children}
     </FormContext.Provider>
   )
