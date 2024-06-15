@@ -33,7 +33,11 @@ const TechnicalSkill = () => {
       if(event.target.checked){
          setInterestedArea((interestedArea)=>{
              if(event.target.checked){
-               
+                return [...interestedArea,name] ;
+             }else{
+               return interestedArea.filter(
+                 (checkboxName) => checkboxName !== name
+               )
              }
          })
       }
