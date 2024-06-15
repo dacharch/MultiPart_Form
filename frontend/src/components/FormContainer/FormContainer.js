@@ -56,9 +56,8 @@ const FormContainer = () => {
     ];
   };
 
-  const handlePrevious = ()=>{
+ 
 
-  }
   const handleNext = () => {
      if(activeStep == 0){
          if(fullName!= "" && dateOfBirth != "" && email !="" && phoneNumber !=""){
@@ -66,8 +65,40 @@ const FormContainer = () => {
          }else{
              setError("Please Fill all the Details before clicking the Next button")
          }
+     }else{
+      if (activeStep == 1){
+          if(programmingLanguage !="" && experience !=""){
+            setActiveStep(2) ;
+          }else{
+             setError("Please Fill all the mandatory details");
+          }
+      }else {
+         if(activeForm == 2){
+           if(selectedFile != null){
+             setActiveStep(3) ;
+           }else{
+             setError("Please Select the File ")
+           }
+         } else{
+            if(activeStep ==3){
+               submitForm() ;
+            }
+         }
+      }
      }
   };
+
+   const handlePrevious = () => {
+     setActiveStep(0);
+   };
+
+
+
+  const  submitForm = () =>{
+    
+  }
+
+
 
   const steps = getSteps();
 
