@@ -31,11 +31,11 @@ const TechnicalSkill = () => {
 
   const handleInterestedCheckBoxChange = (name) => (event) =>{
       if(event.target.checked){
-         setInterestedArea((interestedArea)=>{
+         setInterestedArea((interestedCheck)=>{
              if(event.target.checked){
-                return [...interestedArea,name] ;
+                return [...interestedCheck,name] ;
              }else{
-               return interestedArea.filter(
+               return interestedCheck.filter(
                  (checkboxName) => checkboxName !== name
                )
              }
@@ -127,12 +127,14 @@ const TechnicalSkill = () => {
             <FormControlLabel control={<Checkbox
                  checked={interestedArea.includes("UI/UX Design")}
                  onChange={handleInterestedCheckBoxChange("UI/UX Design")} 
-            />} label="UI/UX Design" />
+            />}
+             label="UI/UX Design"
+           />
 
             <FormControlLabel
               control={<Checkbox
                 checked={interestedArea.includes("Backend Development")}
-                onChange={handleDevelopmentCheckBoxChange("Backend Development")}
+                onChange={handleInterestedCheckBoxChange("Backend Development")}
              />}
               label="Backend Development"
             />
@@ -147,11 +149,12 @@ const TechnicalSkill = () => {
 
             <FormControlLabel control={<Checkbox
                checked={interestedArea.includes("Authentication")}
+               onChange={handleInterestedCheckBoxChange("Authentication")}
             />} label="Authentication" />
             <FormControlLabel
               control={<Checkbox 
                 checked={interestedArea.includes("Real Time Updates")}
-                onChange={handleInterestedCheckBoxChange("Real-Time Updates")}
+                onChange={handleInterestedCheckBoxChange("Real Time Updates")}
               />}
               label="Real Time Updates"
             />
