@@ -41,7 +41,7 @@ const PersonalInfo = () => {
 
    function validateEmail(mail){
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.text(mail) ;
+      return emailRegex.test(mail) ;
    }
 
    function handleCloseSnackbar(){
@@ -84,12 +84,13 @@ const PersonalInfo = () => {
              <Grid item xs={12}>
                  <TextField 
                     fullWidth
+                    
                     error={!isValid}
                     label="Email Address"
                     type="email"
                     name="email"
                     value={email}
-                    autoComplete='off'
+               
                     onChange={handleEmailChange}
                     required
                  />

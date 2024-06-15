@@ -15,7 +15,17 @@ import {
 import { FormState } from '../../context/StateProvider';
 
 const ReviewAndSubmit = () => {
-  
+  const {
+    fullName,
+    dateOfBirth,
+    email,
+    phoneNumber,
+    programmingLanguage,
+    experience,
+    developmentCheck,
+    interestedArea,
+    selectedFile,
+  } = FormState() ;
    
    
   return (
@@ -28,7 +38,7 @@ const ReviewAndSubmit = () => {
               fullWidth
               label="Full Name"
               name="fullName"
-              
+              value={fullName}
               disabled
             />
           </Grid>
@@ -38,8 +48,10 @@ const ReviewAndSubmit = () => {
               label="Date of Birth"
               type="date"
               name="dob"
+              value={dateOfBirth}
               
               disabled
+              required 
             />
           </Grid>
           <Grid item xs={12}>
@@ -48,7 +60,7 @@ const ReviewAndSubmit = () => {
               label="Email Address"
               type="email"
               name="email"
-             
+              value={email}
               disabled
             />
           </Grid>
@@ -58,7 +70,7 @@ const ReviewAndSubmit = () => {
               label="Phone Number"
               type="tel"
               name="phoneNumber"
-        
+              value={phoneNumber}
               disabled
             />
           </Grid>
@@ -72,7 +84,7 @@ const ReviewAndSubmit = () => {
               select
               label="Primary Programming Language"
               name="language"
-              
+              value={programmingLanguage}
               disabled
               required
             >
@@ -90,7 +102,7 @@ const ReviewAndSubmit = () => {
               select
               label="Experience"
               name="Experience level"
-              
+              value={experience}
               required
               disabled
             >
@@ -107,7 +119,7 @@ const ReviewAndSubmit = () => {
                 control={
                   <Checkbox
                     disabled
-                   
+                    checked={developmentCheck.includes("MEAN")}
                   />
                 }
                 label="MEAN"
@@ -116,6 +128,7 @@ const ReviewAndSubmit = () => {
                 control={
                   <Checkbox
                     disabled
+                    checked={developmentCheck.includes("MERN")}
                    
                   />
                 }
@@ -125,7 +138,7 @@ const ReviewAndSubmit = () => {
                 control={
                   <Checkbox
                     disabled
-                    
+                    checked={developmentCheck.includes("LAMP")}
                   />
                 }
                 label="LAMP"
@@ -133,6 +146,7 @@ const ReviewAndSubmit = () => {
               <FormControlLabel
                 control={
                   <Checkbox
+                    checked={developmentCheck.includes("OTHER")}
                     disabled
                    
                   />
@@ -148,6 +162,7 @@ const ReviewAndSubmit = () => {
                 control={
                   <Checkbox
                     disabled
+                    checked={interestedArea.includes("UI/UX Design")}
                      
                   />
                 }
@@ -156,6 +171,7 @@ const ReviewAndSubmit = () => {
               <FormControlLabel
                 control={
                   <Checkbox
+                    checked={interestedArea.includes("Backend Development")}
                     disabled
                    
                   />
@@ -166,6 +182,7 @@ const ReviewAndSubmit = () => {
                 control={
                   <Checkbox
                     disabled
+                    checked={interestedArea.includes("Database Management")}
                     
                   />
                 }
@@ -175,6 +192,7 @@ const ReviewAndSubmit = () => {
                 control={
                   <Checkbox
                     disabled
+                    checked={interestedArea.includes("Authenticatino")}
                     
                   />
                 }

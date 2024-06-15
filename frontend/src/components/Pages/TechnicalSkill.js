@@ -30,7 +30,13 @@ const TechnicalSkill = () => {
   };
 
   const handleInterestedCheckBoxChange = (name) => (event) =>{
-     
+      if(event.target.checked){
+         setInterestedArea((interestedArea)=>{
+             if(event.target.checked){
+               
+             }
+         })
+      }
   }
 
   return (
