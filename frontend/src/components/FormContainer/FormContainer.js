@@ -73,7 +73,7 @@ const FormContainer = () => {
              setError("Please Fill all the mandatory details");
           }
       }else {
-         if(activeForm == 2){
+         if(activeStep == 2){
            if(selectedFile != null){
              setActiveStep(3) ;
            }else{

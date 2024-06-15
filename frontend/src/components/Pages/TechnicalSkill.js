@@ -1,7 +1,19 @@
 import { Checkbox, FormControlLabel, FormLabel, Grid, MenuItem, TextField,Box } from '@mui/material'
+import { FormState } from '../../context/StateProvider';
+import { useEffect,useState } from 'react';
 import React from 'react'
 
 const TechnicalSkill = () => {
+  const {
+    programmingLanguage,
+    setProgrammingLanguage,
+    experience,
+    setExperience,
+    developmentCheck,
+    setDevelopmentCheck,
+    interestedArea,
+    setInterestedArea,
+  } = FormState() ;
   return (
     <div>
       <Grid container spacing={2}>
