@@ -17,6 +17,10 @@ import ReviewAndSubmit from '../Pages/ReviewAndSubmit';
 
 const FormContainer = () => {
   const [activeStep,setActiveStep] = useState(0) ;
+  const[error,setError] =useState(null) ;
+  const [open,setOpen] =useState(false) ;
+  const[message,setMessage] = useState("") ;
+  
   
   const getStepContent = (step)=>{
        switch(step) {
@@ -47,7 +51,10 @@ const FormContainer = () => {
  }
 
   const steps = getSteps() ;
-
+  
+  function handleCloseSnackbar(){
+     setError(null);
+  }
   return (
      <>
         <Stepper activeStep={activeStep}>
@@ -86,6 +93,21 @@ const FormContainer = () => {
          </Box>
       </Box>
      
+     <Snackbar
+        open={error !== null}
+        autoHideDuration={5000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{vertical:"bottom",horizontal:"center"}}
+     >
+      <Alert
+         elevation={6}
+         variant='filled'
+         onClose={handleCloseSnackbar}
+         severity='error'
+      >
+          {error}
+      </Alert>
+     </Snackbar>
      </>
   )
 }
