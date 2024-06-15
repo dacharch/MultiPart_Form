@@ -12,6 +12,8 @@ const StateProvider = ({children}) => {
     const [programmingLanguage,setProgrammingLanguage] = useState() ;
     const [experience,setExperience]= useState("") ;
     const [interestedArea,setInterestedArea] =useState([]) ;
+    const [developmentCheck,setDevelopmentCheck] = useState(["MEAN"]) ;
+    
     const [selectedFile,setSelectedFile] = useState(null) ;
 
   
@@ -27,6 +29,8 @@ const StateProvider = ({children}) => {
            setProgrammingLanguage,
            experience,
            setExperience,
+           developmentCheck,
+           setDevelopmentCheck,
            interestedArea,
            setInterestedArea
            ,selectedFile,
