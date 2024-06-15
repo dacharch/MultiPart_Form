@@ -18,8 +18,8 @@ const UploadSection = () => {
 
   const fileUpload =(e) =>{
     const file = e.target.files[0] ;
-
     setFileName(file.name) ;
+    
     if(file){
        if(file.size <=5 *1024 * 1024){
           setSelectedFile(file) ;
@@ -38,19 +38,24 @@ const UploadSection = () => {
   return (
     <div className="upload_section">
       <div className="upload_container">
-        <input type="file" accept=".doc, .docx, .pdf" hidden />
+        <input 
+             ref={fileInputRef}
+             type="file"
+             accept=".doc, .docx, .pdf"
+             onChange={fileUpload}
+             hidden 
+         />
 
         <GrCloudUpload />
         <Button 
          variant="contained"
          onClick={handleBrowse}
-
         >
          Browse
         </Button>
               
         <br />
-        <Typography>FileName: </Typography>
+        <Typography>FileName: {fileName} </Typography>
         <Typography>PDF/ DOCX</Typography>
         <Typography>File Size : 5 MB</Typography>
 
