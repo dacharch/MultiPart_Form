@@ -11,7 +11,7 @@ const personalInfo = new Schema({
 }) ;
 
 const technicalSkills = new Schema({
-     programmingLanguages: {
+     programmingLanguage: {
          type:String,
          required: true,
 

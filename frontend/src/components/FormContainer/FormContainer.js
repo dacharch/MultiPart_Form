@@ -118,8 +118,7 @@ const FormContainer = () => {
            "Content-Type":"multipart/form-data",
         },
 
-      })
-      .then((res)=>{
+      }).then((res)=>{
          setOpen(true) ;
          setMessage(res.data.message) ;
 
