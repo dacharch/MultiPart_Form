@@ -25,6 +25,8 @@ const StateProvider = ({children}) => {
            setDateOfBirth,
            email,
            setEmail,
+           phoneNumber,
+           setPhoneNumber,
            programmingLanguage,
            setProgrammingLanguage,
            experience,

@@ -8,12 +8,26 @@ const PersonalInfo = () => {
     setFullName,
     dateOfBirth,
     setDateOfBirth,
+    phoneNumber,
+    setPhoneNumber,
     email,
     setEmail,
   } = FormState();
   const [error, setError] = useState(null);
   const [isValid, setIsValid] = useState(true);
   const [isPhoneNumberValid, setIsPhoneNumberValid] = useState(true);
+
+
+  function phoneNumberChange(event){
+     const newPhoneNumber =  event.target.value ;
+     setPhoneNumber(newPhoneNumber) ;
+     setIsPhoneNumberValid(validatePhoneNumber(newPhoneNumber)) ;
+  }
+
+  function validatePhoneNumber(phoneNumber){
+        const phoneRegex = /^d{10}$/ ;
+        return phoneRegex.test(phoneNumber) ;
+  }
 
   function settingDateOfBirth(e) {
     const enterDob = e.target.value;
@@ -95,10 +109,13 @@ const PersonalInfo = () => {
         <Grid item xs={12}>
           <TextField
             fullWidth
+            error={!isPhoneNumberValid}
             label="Phone Number"
             type="tel"
             name="phoneNumber"
             autoComplete="off"
+            value={phoneNumber}
+            onChange={phoneNumberChange}
             required
           />
         </Grid>

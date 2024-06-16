@@ -52,6 +52,8 @@ const TechnicalSkill = () => {
             select
             label="Primary Programming Language"
             name="language"
+            value={programmingLanguage}
+            onChange={(e)=>setProgrammingLanguage(e.target.value)}
             required
           >
             <MenuItem value="JavaScript">JavaScript</MenuItem>

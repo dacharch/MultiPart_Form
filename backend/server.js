@@ -49,7 +49,7 @@ app.post("/api/submit",upload.single("file"),async (req,res)=>{
         experience,
         developmentCheck,
         interestedArea,
-    } = JSON.parse (req.body.userDate) ;
+    } = JSON.parse(req.body.userDate) ;
 
     const file = req.file ;
 
@@ -91,5 +91,5 @@ app.post("/api/submit",upload.single("file"),async (req,res)=>{
 const PORT =  process.env.PORT  || 8080 ;
 
 app.listen(PORT,()=>{
-    console.log("server is running") ;
+    console.log(`Server is Running on Port ${PORT}`) ;
 })

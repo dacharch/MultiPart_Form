@@ -212,7 +212,7 @@ const ReviewAndSubmit = () => {
           </Grid>
         </Grid>
         <h2>Uploaded File</h2>
-        <Typography>File Name : {}</Typography>
+        <Typography>File Name : {selectedFile.name}</Typography>
       </Container>
     </div>
   );

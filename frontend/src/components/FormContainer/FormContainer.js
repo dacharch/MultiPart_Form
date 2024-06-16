@@ -9,6 +9,7 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
+import axios from 'axios' ;
 
 import PersonalInfo from "../Pages/PersonalInfo";
 import TechnicalSkill from "../Pages/TechnicalSkill";
@@ -95,7 +96,36 @@ const FormContainer = () => {
 
 
   const  submitForm = () =>{
-    
+    let file = selectedFile ;
+    const formSubmission = {
+      fullName,
+      dateOfBirth,
+      email,
+      phoneNumber,
+      programmingLanguage,
+      experience,
+      developmentCheck,
+      interestedArea,
+    } ;
+
+    const formData = new FormData() ;
+    formData.append("file",file) ;
+    formData.append("fileName",file.name) ;
+    formData.append("userData",JSON.stringify(formSubmission)) ;
+    try{
+      axios.post("http://localhost:8080/api/submit/",formData,{
+        headers:{
+           "Content-Type":"multipart/form-data",
+        },
+
+      })
+      .then((res)=>{
+         setOpen(true) ;
+         setMessage(res.data.message) ;
+
+      })
+
+    }catch(error){}
   }
 
 
