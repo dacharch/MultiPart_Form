@@ -93,6 +93,10 @@ const FormContainer = () => {
      setActiveStep(0);
    };
 
+   const handleCloseSnackbar2 = ()=>{
+      setOpen(false) ;
+   }
+
 
 
   const  submitForm = () =>{
@@ -180,6 +184,24 @@ const FormContainer = () => {
         >
           {error}
         </Alert>
+      </Snackbar>
+
+      <Snackbar
+         open = {open}
+         autoHideDuration={5000}
+         onClose={handleCloseSnackbar2}
+         anchorOrigin={{vertical: "bottom",horizontal:"center"}}
+      >
+
+        <Alert
+           elevation={6}
+           variant="filled"
+           onClose={handleCloseSnackbar2}
+           severity="success"
+        >
+           {message}
+        </Alert>
+          
       </Snackbar>
     </>
   );
