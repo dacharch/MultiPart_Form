@@ -13,6 +13,8 @@ const PersonalInfo = () => {
     email,
     setEmail,
   } = FormState();
+
+
   const [error, setError] = useState(null);
   const [isValid, setIsValid] = useState(true);
   const [isPhoneNumberValid, setIsPhoneNumberValid] = useState(true);
@@ -79,7 +81,7 @@ const PersonalInfo = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
+          <TextField  
             fullWidth
             label="Date of Birth"
             type="date"

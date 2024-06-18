@@ -46,7 +46,7 @@ const UploadSection = () => {
              hidden 
          />
 
-        <GrCloudUpload />
+        <GrCloudUpload className='img' />
         <Button 
          variant="contained"
          onClick={handleBrowse}
