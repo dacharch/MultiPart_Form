@@ -14,7 +14,13 @@ const { Personal, Skills, File } = require("./Model/FormSchema");
 dotenv.config();
 connectDB();
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://*"],
+    method:["POST","GET"],
+    credentials:true
+  }
+));
 app.use(express.json());
 
 app.get("/", (req, res) => {
