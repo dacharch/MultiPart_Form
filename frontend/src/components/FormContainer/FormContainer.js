@@ -78,7 +78,8 @@ const FormContainer = () => {
            if(selectedFile != null){
              setActiveStep(3) ;
            }else{
-             setError("Please Select the File ")
+            //  setError("Please Select the File ")
+            setActiveStep(3) ;
            }
          } else{
             if(activeStep ==3){
