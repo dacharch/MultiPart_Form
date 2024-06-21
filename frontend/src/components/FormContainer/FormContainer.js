@@ -75,7 +75,7 @@ const FormContainer = () => {
           }
       }else {
          if(activeStep == 2){
-           if(selectedFile  == ""){
+           if(selectedFile  != ""){
              setActiveStep(3) ;
            }else{
  
