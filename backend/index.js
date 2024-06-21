@@ -18,6 +18,7 @@ app.use(
   cors({
     origin: ["https://frontend-pi-inky.vercel.app/"],
     method: ["POST", "GET"],
+    
   })
 );
 app.use(express.json());
@@ -84,7 +85,7 @@ app.post("/api/submit", upload.single("file"), async (req, res) => {
 
   }catch(error){
      console.error("Error uploading File",error) ;
-     res.status(500).jsoin({message: "Internal Server error"}) ;
+     res.status(500).json({message: "Internal Server error"}) ;
   }
 });
 
