@@ -14,13 +14,12 @@ const { Personal, Skills, File } = require("./Model/FormSchema");
 dotenv.config();
 connectDB();
 
-app.use(cors(
-  {
-    origin:["https://*"],
-    method:["POST","GET"],
-  
-  }
-));
+app.use(
+  cors({
+    origin: ["https://frontend-pi-inky.vercel.app/"],
+    method: ["POST", "GET"],
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
