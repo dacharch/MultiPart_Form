@@ -9,7 +9,7 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
-import axios from 'axios' ;
+import axios from "axios";
 
 import PersonalInfo from "../Pages/PersonalInfo";
 import TechnicalSkill from "../Pages/TechnicalSkill";
@@ -57,52 +57,51 @@ const FormContainer = () => {
     ];
   };
 
- 
-
   const handleNext = () => {
-     if(activeStep == 0){
-         if(fullName!= "" && dateOfBirth != "" && email !="" && phoneNumber !=""){
-             setActiveStep(1) ;
-         }else{
-             setError("Please Fill all the Details before clicking the Next button")
-         }
-     }else{
-      if (activeStep == 1){
-          if(programmingLanguage !="" && experience !=""){
-            setActiveStep(2) ;
-          }else{
-             setError("Please Fill all the mandatory details");
-          }
-      }else {
-         if(activeStep == 2){
-           if(selectedFile  != ""){
-             setActiveStep(3) ;
-           }else{
- 
-            setError("Please Select the File ");
-
-           }
-         } else{
-            if(activeStep ==3){
-               submitForm() ;
-            }
-         }
+    if (activeStep == 0) {
+      if (
+        fullName != "" &&
+        dateOfBirth != "" &&
+        email != "" &&
+        phoneNumber != ""
+      ) {
+        setActiveStep(1);
+      } else {
+        setError("Please Fill all the Details before clicking the Next button");
       }
-     }
+    } else {
+      if (activeStep == 1) {
+        if (programmingLanguage != "" && experience != "") {
+          setActiveStep(2);
+        } else {
+          setError("Please Fill all the mandatory details");
+        }
+      } else {
+        if (activeStep == 2) {
+          if (selectedFile != "") {
+            setActiveStep(3);
+          } else {
+            setError("Please Select the File ");
+          }
+        } else {
+          if (activeStep == 3) {
+            submitForm();
+          }
+        }
+      }
+    }
   };
 
-   const handlePrevious = () => {
-     setActiveStep(0);
-   };
+  const handlePrevious = () => {
+    setActiveStep(0);
+  };
 
-   const handleCloseSnackbar2 = ()=>{
-      setOpen(false) ;
-   }
+  const handleCloseSnackbar2 = () => {
+    setOpen(false);
+  };
 
-
-
-  const  submitForm = () =>{
-    let file = selectedFile ;
+  const submitForm = () => {
+    let file = selectedFile;
     const formSubmission = {
       fullName,
       dateOfBirth,
@@ -112,15 +111,15 @@ const FormContainer = () => {
       experience,
       developmentCheck,
       interestedArea,
-    } ;
+    };
 
-    const formData = new FormData() ;
-    formData.append("file",file) ;
-    formData.append("fileName",file.name) ;
-    formData.append("userData",JSON.stringify(formSubmission)) ;
-    try{
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("fileName", file.name);
+    formData.append("userData", JSON.stringify(formSubmission));
+    try {
       axios
-        .post("https://backend-beta-six-23.vercel.app/api/submit", formData, {
+        .post("http://localhost:8080/api/submit", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -129,17 +128,14 @@ const FormContainer = () => {
           setOpen(true);
           setMessage(res.data.message);
         });
-
-    }catch(error){}
-  }
-
-
+    } catch (error) {}
+  };
 
   const steps = getSteps();
 
-  const handleCloseSnackbar = ()=>{
-    setError(null)
-  }
+  const handleCloseSnackbar = () => {
+    setError(null);
+  };
   return (
     <>
       <Stepper activeStep={activeStep}>
@@ -159,15 +155,15 @@ const FormContainer = () => {
           alignItems="center"
           justifyContent="space-around"
         >
-          <Button 
+          <Button
             variant="contained"
-            disabled={activeStep === steps.length -1 ? false: true}
+            disabled={activeStep === steps.length - 1 ? false : true}
             onClick={handlePrevious}
           >
             Edit
-         </Button>
+          </Button>
           <Button variant="contained" onClick={handleNext}>
-            {activeStep === steps.length -1 ? "Submit":"Next"}
+            {activeStep === steps.length - 1 ? "Submit" : "Next"}
           </Button>
         </Box>
       </Box>
@@ -189,21 +185,19 @@ const FormContainer = () => {
       </Snackbar>
 
       <Snackbar
-         open = {open}
-         autoHideDuration={5000}
-         onClose={handleCloseSnackbar2}
-         anchorOrigin={{vertical: "bottom",horizontal:"center"}}
+        open={open}
+        autoHideDuration={5000}
+        onClose={handleCloseSnackbar2}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
-
         <Alert
-           elevation={6}
-           variant="filled"
-           onClose={handleCloseSnackbar2}
-           severity="success"
+          elevation={6}
+          variant="filled"
+          onClose={handleCloseSnackbar2}
+          severity="success"
         >
-           {message}
+          {message}
         </Alert>
-          
       </Snackbar>
     </>
   );

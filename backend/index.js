@@ -14,6 +14,10 @@ const { Personal, Skills, File } = require("./Model/FormSchema");
 dotenv.config();
 connectDB();
 
+
+app.use(cors()) ;
+
+
 app.use(
   cors({
     origin: ["https://frontend-pi-inky.vercel.app/"],
@@ -70,10 +74,12 @@ app.post("/api/submit", upload.single("file"), async (req, res) => {
   })
 
 
-  // if(!file){
-  //    return res.status(400).json({message:"No file upload"}) ;
+  if(!file){
+     return res.status(400).json({message:"No file upload"}) ;
 
-  // }
+  }
+
+
   try{
     const file = new File({
       filename:req.body.fileName,
