@@ -14,7 +14,7 @@ const StateProvider = ({children}) => {
     const [interestedArea,setInterestedArea] =useState([]) ;
     const [developmentCheck,setDevelopmentCheck] = useState(["MEAN"]) ;
     
-    const [selectedFile,setSelectedFile] = useState(null) ;
+    const [selectedFile,setSelectedFile] = useState("") ;
 
   
     return (
