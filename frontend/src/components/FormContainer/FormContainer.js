@@ -119,7 +119,7 @@ const FormContainer = () => {
     try{
       axios
         .post(
-          "https://backend-ieled0arq-neeraj-kumars-projects-1130c31c.vercel.app/",
+          "https://backend-ieled0arq-neeraj-kumars-projects-1130c31c.vercel.app/api/submit",
           formData,
           {
             headers: {
