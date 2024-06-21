@@ -118,15 +118,11 @@ const FormContainer = () => {
     formData.append("userData",JSON.stringify(formSubmission)) ;
     try{
       axios
-        .post(
-          "https://backend-ieled0arq-neeraj-kumars-projects-1130c31c.vercel.app/api/submit",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
+        .post("https://backend-beta-six-23.vercel.app/api/submit", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
         .then((res) => {
           setOpen(true);
           setMessage(res.data.message);
