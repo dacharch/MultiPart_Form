@@ -75,14 +75,15 @@ const FormContainer = () => {
           }
       }else {
          if(activeStep == 2){
-           if(selectedFile != null){
-             setActiveStep(3) ;
-           }else{
-            //  setError("Please Select the File ")
             setActiveStep(3) ;
-           }
+          //  if(selectedFile != null){
+          //    setActiveStep(3) ;
+          //  }else{
+          //   //  setError("Please Select the File ")
+          //   setActiveStep(3) ;
+          //  }
          } else{
-            if(activeStep ==3){
+            if(activeStep == 3){
                submitForm() ;
             }
          }
